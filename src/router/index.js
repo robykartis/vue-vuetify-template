@@ -8,6 +8,8 @@ import DashboardLayouts from '@/components/layouts/dashboardLayouts.vue'
 import Dashboard from '../views/admin/Dashboard.vue'
 // Project
 import ProjectIndex from '../views/admin/project/Index.vue'
+// Rekap
+import RekapIndex from '../views/admin/rekap/Index.vue'
 
 Vue.use(VueRouter)
 
@@ -41,6 +43,17 @@ const routes = [
         path:'/project',
         name: 'projectIndex',
         component: ProjectIndex
+      }
+    ]
+  },
+  {
+    path: '/',
+    component: DashboardLayouts,
+    children:[
+      {
+        path:'/rekap',
+        name: 'rekapIndex',
+        component: RekapIndex
       }
     ]
   },

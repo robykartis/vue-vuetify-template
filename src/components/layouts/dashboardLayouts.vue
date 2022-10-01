@@ -6,7 +6,7 @@
           <v-avatar class="mb-3" size="68">
             <v-img src="https://www.svgrepo.com/show/105032/avatar.svg"></v-img>
           </v-avatar>
-          <div>john@vuetifyjs.com</div>
+          <div>robykarti.s@baddau.my.id</div>
         </v-sheet>
       </v-flex>
 
@@ -51,6 +51,26 @@
             </v-list-item>
           </v-list-group>
         </v-card>
+
+        <v-card elevation="4" class="rounded-lg">
+          <v-list-group
+            class="mt-3"
+            color="success"
+            prepend-icon="mdi-archive"
+            no-action
+          >
+            <template v-slot:activator>
+              <v-list-item-content>
+                <v-list-item-title>Rekap</v-list-item-title>
+              </v-list-item-content>
+            </template>
+            <v-list-item link to="/rekap">
+              <v-list-item-content>
+                <v-list-item-title>Rekap Project</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list-group>
+        </v-card>
       </v-list>
     </v-navigation-drawer>
 
@@ -85,7 +105,7 @@ export default {
     drawer: null,
     items: [
       {
-        active: true,
+        active: null,
       },
     ],
   }),
