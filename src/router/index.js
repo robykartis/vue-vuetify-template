@@ -1,14 +1,48 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+// import HomeView from '../views/HomeView.vue'
+import Login from '../views/auth/Login.vue'
+import Register from '../views/auth/Register.vue'
+// Dashboard
+import DashboardLayouts from '@/components/layouts/dashboardLayouts.vue'
+import Dashboard from '../views/admin/Dashboard.vue'
+// Project
+import ProjectIndex from '../views/admin/project/Index.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'login',
+    component: Login
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: Register
+  },
+  {
+    path: '/',
+    component: DashboardLayouts,
+    children:[
+      {
+        path:'/dashboard',
+        name: 'dashboard',
+        component: Dashboard
+      }
+    ]
+  },
+  {
+    path: '/',
+    component: DashboardLayouts,
+    children:[
+      {
+        path:'/project',
+        name: 'projectIndex',
+        component: ProjectIndex
+      }
+    ]
   },
   {
     path: '/about',
